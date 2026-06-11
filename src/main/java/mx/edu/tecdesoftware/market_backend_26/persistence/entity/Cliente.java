@@ -79,7 +79,17 @@ public class Cliente {
         return activo;
     }
 
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
+
     public void setActivo(Boolean activo) {
         this.activo = activo;
+
+
     }
 }
