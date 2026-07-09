@@ -18,12 +18,16 @@ public class Compra {
     @Column (name = "id_cliente")
     private String idCliente;
 
+    @Column (name = "fecha")
     private LocalDateTime fecha;
 
     @Column (name = "medio_pago")
     private String medioPago;
 
+    @Column(name = "comentario")
     private String comentario;
+
+    @Column (name = "estado")
     private String estado;
 
     //Relacion con cliente:
@@ -33,6 +37,9 @@ public class Compra {
             insertable = false , updatable = false)
     private Cliente cliente;
     // una compra tiene muchos productos
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
+    private List<CompraProducto> productos;
+
     @OneToMany(mappedBy = "compra")
     private List<CompraProducto> productos;
 

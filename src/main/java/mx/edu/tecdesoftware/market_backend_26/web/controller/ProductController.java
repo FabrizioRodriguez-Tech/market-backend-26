@@ -26,16 +26,16 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity <Product> getProduct(@PathVariable ("id") it productId){
+    public ResponseEntity <Product> getProduct(@PathVariable ("id") int productId){
         return productService.getProduct(productId)
-                .map(ResponseEntity: :ok)
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/category/{categoryId}")
     public ResponseEntity<List<Product>> getByCategory(@PathVariable("categoryId") int categoryId){
         return productService.getByCategory(categoryId)
-                .map(ResponseEntity: :ok)
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
