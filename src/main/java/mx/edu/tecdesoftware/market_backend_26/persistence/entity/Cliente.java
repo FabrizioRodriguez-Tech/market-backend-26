@@ -9,29 +9,29 @@ import java.util.List;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cliente")
-    private Integer idCliente;
+    @Column(name = "id")
+    private String idCliente;
+
     private String nombre;
+
+    @Column(name = "apellidos")
     private String apellido;
+
     private Long celular;
     private String direccion;
 
     @Column(name = "correo_electronico")
     private String correoElectronico;
 
-
-    //un cliente tiene muchas compras
+    // un cliente tiene muchas compras
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
 
-    private Boolean activo;
-
-    public Integer getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(Integer idCliente) {
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
@@ -75,21 +75,11 @@ public class Cliente {
         this.correoElectronico = correoElectronico;
     }
 
-    public Boolean getActivo() {
-        return activo;
-    }
-
     public List<Compra> getCompras() {
         return compras;
     }
 
     public void setCompras(List<Compra> compras) {
         this.compras = compras;
-    }
-
-    public void setActivo(Boolean activo) {
-        this.activo = activo;
-
-
     }
 }

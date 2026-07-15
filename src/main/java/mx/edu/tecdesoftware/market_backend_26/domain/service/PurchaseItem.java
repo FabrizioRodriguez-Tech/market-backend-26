@@ -6,7 +6,7 @@ public class PurchaseItem {
     private int productId;
     private int cantidad;
     private double total;
-    private String estado;
+    private Boolean estado;
 
     public int getPurchaseId() {
         return purchaseId;
@@ -40,11 +40,11 @@ public class PurchaseItem {
         this.total = total;
     }
 
-    public String getEstado() {
+    public Boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 }

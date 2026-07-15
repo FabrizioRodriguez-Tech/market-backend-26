@@ -1,26 +1,26 @@
 package mx.edu.tecdesoftware.market_backend_26.persistence.entity;
+
 import jakarta.persistence.*;
-import mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity.CompraProductoPK;
 
 @Entity
 @Table(name = "compras_productos")
 public class CompraProducto {
 
     @EmbeddedId
-    private CompraProductoPK id;   // ← reemplaza el id simple
+    private CompraProductoPK id = new CompraProductoPK();
 
     private Integer cantidad;
     private Double total;
-    private String estado;
+    private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_compra" ,
-            insertable = false , updatable = false)
+    @MapsId("idCompra")
+    @JoinColumn(name = "id_compra")
     private Compra compra;
 
-
     @ManyToOne
-    @JoinColumn(name = "id_producto" ,insertable = false , updatable = false)
+    @MapsId("idProducto")
+    @JoinColumn(name = "id_producto")
     private Producto producto;
 
     public CompraProductoPK getId() {
@@ -47,11 +47,11 @@ public class CompraProducto {
         this.total = total;
     }
 
-    public String getEstado() {
+    public Boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 
@@ -61,5 +61,13 @@ public class CompraProducto {
 
     public void setCompra(Compra compra) {
         this.compra = compra;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 }

@@ -8,7 +8,7 @@ public class Category {
 
     private boolean active;
 
-    public int getCategoryID() {
+    public int getCategoryId() {
         return categoryId;
     }
 

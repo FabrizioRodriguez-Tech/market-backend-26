@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Purchase {
 
-    private int purchaseId;
+    private Integer purchaseId;
     private String customerId;
     private LocalDateTime fecha;
     private String medioPago;
@@ -13,11 +13,11 @@ public class Purchase {
     private String estado;
     private List<PurchaseItem> productos;
 
-    public int getPurchaseId() {
+    public Integer getPurchaseId() {
         return purchaseId;
     }
 
-    public void setPurchaseId(int purchaseId) {
+    public void setPurchaseId(Integer purchaseId) {
         this.purchaseId = purchaseId;
     }
 

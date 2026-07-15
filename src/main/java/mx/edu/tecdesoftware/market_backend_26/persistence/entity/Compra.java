@@ -40,9 +40,6 @@ public class Compra {
     @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<CompraProducto> productos;
 
-    @OneToMany(mappedBy = "compra")
-    private List<CompraProducto> productos;
-
     public Integer getIdCompra() {
         return idCompra;
     }
@@ -57,6 +54,14 @@ public class Compra {
 
     public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
+    }
+
+    public List<CompraProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<CompraProducto> productos) {
+        this.productos = productos;
     }
 
     public LocalDateTime getFecha() {

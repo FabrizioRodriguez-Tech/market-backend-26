@@ -18,13 +18,13 @@ public class Producto {
     @Column(name = "id_categoria")
     private Integer idcategoria;
 
-    @Column(name = "id_barras")
+    @Column(name = "codigo_barras")
     private String codigoBarras;
 
-    @Column(name = "id_venta")
+    @Column(name = "precio_venta")
     private double precioVenta;
 
-    @Column(name = "id_stock")
+    @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
     private boolean estado;
